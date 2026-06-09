@@ -1,42 +1,46 @@
 """
-Regime labelling for the M1 episodes.
+Regime labelling for the M1/M2 episodes.
 
 - covid          : non-geopolitical demand shock (CONTROL)
 - ru_war         : 2022 Russian invasion — confirmed European pipeline-supply shock
                    (POSITIVE CONTROL for the break-detection framework)
-- iran_war_2025  : Jun 2025 "Twelve-Day War" (Israel-Iran). Strikes near Bandar
-                   Abbas + Hormuz-closure THREATS, but the strait stayed OPEN —
-                   an elevated-risk precursor, not a chokepoint closure.
-- hormuz_2026    : 2026 Strait-of-Hormuz crisis — the actual LNG/oil CHOKEPOINT
-                   event (CANDIDATE regime to be tested). Iran declared the strait
-                   closed; commercial traffic fell >90%.
+- iran_war_2025  : Jun 2025 Israel-Iran conflict. This is treated as an
+                   elevated geopolitical-risk precursor, not as a confirmed
+                   Strait-of-Hormuz closure.
+- hormuz_2026    : candidate Strait-of-Hormuz chokepoint-disruption regime.
+                   We do not assume a legally complete or fully verified
+                   closure in the baseline. Instead, this window is treated as
+                   a candidate disruption regime whose persistence and economic
+                   relevance must be tested empirically.
 - normal         : LNG-arbitrage / Law-of-One-Price baseline
 
-Event dates verified 2026-06 against public sources (Wikipedia "Twelve-Day War"
-and "2026 Strait of Hormuz crisis", Britannica, ICG). See ROADMAP.
+Note: Hormuz 2026 is intentionally framed as a candidate disruption regime,
+not as an assumed structural break. The empirical tests decide whether it
+behaves like a persistent regime shift or a temporary risk spike.
 """
 from __future__ import annotations
 
 import pandas as pd
 
 # COVID-19 demand shock (control)
-COVID_START = pd.Timestamp("2020-03-11")    # WHO pandemic declaration
+COVID_START = pd.Timestamp("2020-03-11")
 COVID_END = pd.Timestamp("2020-06-30")
 
 # Russian invasion of Ukraine — confirmed pipeline-supply shock (positive control)
 RU_WAR_START = pd.Timestamp("2022-02-24")
-RU_WAR_END = pd.Timestamp("2023-12-31")     # acute European energy-crisis window
+RU_WAR_END = pd.Timestamp("2023-12-31")
 
-# Jun 2025 Twelve-Day War (Israel-Iran) — elevated risk, NO strait closure
-IRAN_WAR_2025_START = pd.Timestamp("2025-06-13")  # Israel "Rising Lion" strikes
-IRAN_WAR_2025_END = pd.Timestamp("2025-06-24")    # ceasefire
+# Jun 2025 Israel-Iran conflict — elevated risk, not treated as confirmed closure
+IRAN_WAR_2025_START = pd.Timestamp("2025-06-13")
+IRAN_WAR_2025_END = pd.Timestamp("2025-06-24")
 
-# 2026 Strait-of-Hormuz crisis — actual chokepoint closure (candidate regime)
-HORMUZ_2026_START = pd.Timestamp("2026-02-28")    # US/Israel "Epic Fury" strikes
-HORMUZ_2026_END = pd.Timestamp("2026-12-31")      # open-ended (closure ongoing; Iran
-#   declared strait closed 2026-03-04, refused to reopen after the 2026-04-08 ceasefire)
+# 2026 Strait-of-Hormuz candidate disruption window.
+# Kept as an open-ended candidate regime for testing; do not describe as a
+# fully verified structural break unless supported by external evidence.
+HORMUZ_2026_START = pd.Timestamp("2026-02-28")
+HORMUZ_2026_END = pd.Timestamp("2026-12-31")
 
-# Order matters only if windows overlap (these do not).
+# Order matters only if windows overlap.
 WINDOWS = [
     ("covid", COVID_START, COVID_END),
     ("ru_war", RU_WAR_START, RU_WAR_END),
@@ -49,7 +53,7 @@ ORDER = ["normal", "covid", "ru_war", "iran_war_2025", "hormuz_2026"]
 
 
 def label_regime(dates: pd.Series) -> pd.Series:
-    """Map a date Series to regime labels (later window wins on overlap; else 'normal')."""
+    """Map a date Series to regime labels; else 'normal'."""
     d = pd.to_datetime(dates)
     out = pd.Series("normal", index=d.index, dtype="object")
     for name, lo, hi in WINDOWS:
@@ -59,10 +63,10 @@ def label_regime(dates: pd.Series) -> pd.Series:
 
 def describe() -> str:
     notes = {
-        "iran_war_2025": "  (Twelve-Day War; threats, strait stayed OPEN)",
-        "hormuz_2026": "  (actual closure; primary candidate chokepoint regime)",
+        "iran_war_2025": "  (elevated-risk precursor; not a confirmed closure)",
+        "hormuz_2026": "  (candidate chokepoint-disruption regime; test empirically)",
     }
-    lines = ["REGIME WINDOWS (event dates verified against public sources):"]
+    lines = ["REGIME WINDOWS (candidate labels for empirical testing):"]
     for name, lo, hi in WINDOWS:
         lines.append(f"  {name:14s} {lo.date()} -> {hi.date()}{notes.get(name, '')}")
     return "\n".join(lines)
