@@ -1,0 +1,8 @@
+series,adf_p,kpss_p,verdict
+spread_ttf_hh,0.1471,0.01,non-stationary
+spread_ttf_jkm,0.0022,0.0903,stationary
+d_spread_ttf_hh,0.0,0.1,stationary
+d_spread_ttf_jkm,0.0,0.1,stationary
+z_dlog_ttf,0.0,0.1,stationary
+z_gpr,0.0,0.1,stationary
+z_us_storage,0.0,0.1,stationary

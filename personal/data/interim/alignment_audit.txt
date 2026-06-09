@@ -1,0 +1,25 @@
+Master grid: 1870 trading days 2019-01-02 -> 2026-06-05
+
+STALENESS
+    series            freq  age_min  age_median  age_max                                                          lag_rule
+    market daily (trading)        0           0        0                       T+0 exchange settle (known at close of day)
+us_storage          weekly        6          10       12  EIA weekly report: week-ending Fri released following Thu (≈T+6)
+de_storage daily (gas-day)        1           1        2                    GIE AGSI+ gas-day published next morning (T+1)
+    es_lng daily (gas-day)        1           1        2                     GIE ALSI gas-day published next morning (T+1)
+       hdd           daily        5           5        5                              Open-Meteo ERA5 reanalysis lag ≈ T+5
+     us_ip         monthly       47          64       80 FRED INDPRO released mid next month (conservative month-end +20d)
+   euro_ip         monthly       72          89      120                   Eurostat euro-area IP released ≈ month-end +45d
+       gpr         monthly       37          54       70               Caldara-Iacoviello GPR updated ≈ 10th of next month
+       epu         monthly       34          51       67           EPU Europe published early next month (≈ month-end +7d)
+
+PIT DEMO @ 2022-02-25
+    series            freq event_date available_at  age_days
+    market daily (trading) 2022-02-25   2022-02-25         0
+us_storage          weekly 2022-02-18   2022-02-24         7
+de_storage daily (gas-day) 2022-02-24   2022-02-25         1
+    es_lng daily (gas-day) 2022-02-24   2022-02-25         1
+       hdd           daily 2022-02-20   2022-02-25         5
+     us_ip         monthly 2022-01-01   2022-02-20        55
+   euro_ip         monthly 2021-12-01   2022-02-14        86
+       gpr         monthly 2022-01-01   2022-02-10        55
+       epu         monthly 2022-01-01   2022-02-07        55

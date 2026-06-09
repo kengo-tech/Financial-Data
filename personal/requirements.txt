@@ -1,0 +1,9 @@
+pandas>=2.0
+numpy
+requests
+yfinance>=0.2.60
+pandas-datareader
+pyarrow
+python-dotenv
+openpyxl
+xlrd>=2.0

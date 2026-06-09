@@ -1,0 +1,58 @@
+REGIME VALIDATION
+REGIME WINDOWS (event dates verified against public sources):
+  covid          2020-03-11 -> 2020-06-30
+  ru_war         2022-02-24 -> 2023-12-31
+  iran_war_2025  2025-06-13 -> 2025-06-24  (Twelve-Day War; threats, strait stayed OPEN)
+  hormuz_2026    2026-02-28 -> 2026-12-31  (actual closure; primary candidate chokepoint regime)
+
+[A] REGIME MEANS (level)
+               ttf_usd_mmbtu  hh_fut_usd_mmbtu  jkm_usd_mmbtu  brent_usd_bbl  spread_ttf_hh  spread_ttf_jkm     GPR  GPRC_RUS
+regime                                                                                                                       
+normal                 10.46              3.02          11.34          67.95           7.44           -0.88  109.45      1.17
+covid                   1.98              1.74           2.41          32.33           0.23           -0.43   74.17      0.45
+ru_war                 26.85              4.62          24.05          90.71          22.22            2.80  139.07      2.88
+iran_war_2025          13.09              3.75          13.74          73.75           9.34           -0.65  166.05      1.49
+hormuz_2026            16.54              2.91          18.01         101.50          13.63           -1.47  225.83      1.84
+
+================================================================================
+[B] iran_war_2025: 20-day before vs during
+             var  before  during  delta  pct  during_peak
+   ttf_usd_mmbtu   11.91   13.09   1.18 +10%        13.81
+hh_fut_usd_mmbtu    3.48    3.75   0.27  +8%         3.99
+   jkm_usd_mmbtu   12.31   13.74   1.43 +12%        14.46
+   brent_usd_bbl   65.60   73.75   8.15 +12%        77.01
+   spread_ttf_hh    8.44    9.34   0.90 +11%         9.96
+  spread_ttf_jkm   -0.40   -0.65  -0.26 +65%         0.38
+             GPR  144.73  166.05  21.31 +15%       166.05
+        GPRC_RUS    1.52    1.49  -0.03  -2%         1.49
+
+================================================================================
+[B] hormuz_2026: 20-day before vs during
+             var  before  during  delta   pct  during_peak
+   ttf_usd_mmbtu   11.39   16.54   5.15  +45%        20.78
+hh_fut_usd_mmbtu    3.19    2.91  -0.28   -9%         3.34
+   jkm_usd_mmbtu   10.86   18.01   7.15  +66%        22.35
+   brent_usd_bbl   69.47  101.50  32.03  +46%       118.35
+   spread_ttf_hh    8.20   13.63   5.43  +66%        17.62
+  spread_ttf_jkm    0.53   -1.47  -2.00 -375%         2.84
+             GPR  155.44  225.83  70.38  +45%       329.65
+        GPRC_RUS    1.82    1.84   0.01   +1%         2.48
+
+================================================================================
+[C] Daily around Hormuz onset (2026-02-20 .. 03-12)
+      date  ttf_usd_mmbtu  jkm_usd_mmbtu  brent_usd_bbl  spread_ttf_hh  spread_ttf_jkm      regime
+2026-02-20          11.05          10.66          71.76           8.00            0.39      normal
+2026-02-23          11.04          10.73          71.49           8.06            0.32      normal
+2026-02-24          10.68          10.52          70.77           7.76            0.16      normal
+2026-02-25          10.72          10.60          70.85           7.75            0.12      normal
+2026-02-26          11.16          10.60          70.75           8.33            0.55      normal
+2026-02-27          11.06          10.73          72.48           8.20            0.33      normal
+2026-03-02          15.34          13.36          77.74          12.38            1.97 hormuz_2026
+2026-03-03          18.61          15.77          81.40          15.56            2.84 hormuz_2026
+2026-03-04          16.60          15.10          81.40          13.68            1.49 hormuz_2026
+2026-03-05          17.30          15.49          85.41          14.30            1.80 hormuz_2026
+2026-03-06          18.16          15.71          92.69          14.98            2.45 hormuz_2026
+2026-03-09          19.06          16.23          98.96          15.94            2.83 hormuz_2026
+2026-03-10          16.14          15.92          87.80          13.12            0.22 hormuz_2026
+2026-03-11          17.01          15.98          91.98          13.80            1.03 hormuz_2026
+2026-03-12          17.21          16.09         100.46          13.98            1.12 hormuz_2026

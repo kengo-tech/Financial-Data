@@ -1,0 +1,18 @@
+# Secrets — NEVER commit (contains GIE_API_KEY)
+.env
+.env.local
+
+# Claude Code per-machine local settings (not shared)
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.pytest_cache/
+
+# OS / editor temp
+.DS_Store
+Thumbs.db
+~$*
