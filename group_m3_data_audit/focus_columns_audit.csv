@@ -1,0 +1,11 @@
+column,present,missing_pct,non_missing_count,first_valid_index,last_valid_index,longest_na_run,zero_count,zero_pct,longest_zero_run
+date,True,0.0,1934,0.0,1933.0,0.0,,,
+euro_ip_index,True,1.65,1902,32.0,1933.0,32.0,0.0,0.0,0.0
+ru_velke_kapusany_kwh_d,True,28.13,1390,544.0,1933.0,544.0,370.0,19.13,368.0
+regime,True,0.0,1934,0.0,1933.0,0.0,,,
+hormuz_2026,False,,0,,,,,,
+spread_ttf_hh,True,0.0,1934,0.0,1933.0,0.0,0.0,0.0,0.0
+spread_ttf_jkm,True,0.0,1934,0.0,1933.0,0.0,0.0,0.0,0.0
+ttf_usd_mmbtu,False,,0,,,,,,
+jkm_usd_mmbtu,True,0.0,1934,0.0,1933.0,0.0,0.0,0.0,0.0
+hh_fut_usd_mmbtu,True,0.0,1934,0.0,1933.0,0.0,0.0,0.0,0.0

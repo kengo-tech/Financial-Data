@@ -1,0 +1,5 @@
+step,n_rows,n_cols
+raw_feature_matrix,1934,20
+drop_rows_with_more_than_40pct_missing,1910,20
+after_ffill,1910,20
+after_final_dropna,1390,20
