@@ -1,0 +1,3 @@
+case,n_features,raw_rows,after_thresh,after_ffill,after_final_dropna,rows_lost_final
+with_pipeline,20,1934,1910,1910,1390,544
+without_pipeline,19,1934,1928,1928,1749,185
